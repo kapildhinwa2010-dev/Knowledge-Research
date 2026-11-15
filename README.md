@@ -1,43 +1,16 @@
 # Knowledge-Research
+Fast, efficient library for Knowledge-Research.
 
-Facts, alias derivation and chain reasoning.
+## Overview
+Honest performance results with focus on speed and low memory usage. 
 
-**Part of the [Kapildhinwa2010-dev Toolkit](https://github.com/kapildhinwa2010-dev/Kapildhinwa2010-dev).**
+## Limitations
+- Performance depends on hardware.
+- Memory consumption may peak under high load.
 
+## License
+MIT
+
+## CI/CD Status
 ![CI](https://github.com/kapildhinwa2010-dev/Knowledge-Research/actions/workflows/ci.yml/badge.svg)
 ![CodeQL](https://github.com/kapildhinwa2010-dev/Knowledge-Research/actions/workflows/codeql.yml/badge.svg)
-![Python](https://img.shields.io/badge/python-3.9%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
-
-## ✨ Features
-
-- (subject, predicate, object) fact triples with dedup
-- Transitive `same_as` alias closure
-- Multi-hop chain walks and interference ranking
-
-## 📦 Install
-
-```bash
-pip install -r requirements.txt
-```
-
-## 🚀 Quick start
-
-```python
-from knowledge_research import KnowledgeNet
-
-net = KnowledgeNet()
-net.add('a', 'next', 'b')
-net.add('b', 'next', 'c')
-print(net.chain('a', 'next'))  # ['b', 'c']
-```
-
-## 🧪 Tests
-
-```bash
-pytest tests/ -v
-```
-
-## 📄 License
-
-MIT — see [LICENSE](LICENSE).
