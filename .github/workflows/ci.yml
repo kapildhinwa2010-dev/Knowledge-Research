@@ -46,4 +46,4 @@ jobs:
       - name: Compile and smoke-test package
         run: |
           python -m compileall -q knowledge_research.py tests
-          python -c "from knowledge_research import Fact; print(type(Fact()).__name__)"
+          python -c "from knowledge_research import KnowledgeNet; n = KnowledgeNet(); print(type(n).__name__)"
