@@ -113,9 +113,10 @@ class KnowledgeNet:
             nxt = [f.object for f in self._by_subject.get(current, []) if f.predicate == predicate]
             if not nxt:
                 break
-            hops.append(nxt[0])
+            # Stop BEFORE revisiting a node (cycle): do not append the repeated node.
             if nxt[0] in seen:
                 break
+            hops.append(nxt[0])
             seen.add(nxt[0])
             current = nxt[0]
         return hops
